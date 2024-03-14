@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #050064;
+            color: #00ffd9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .data-item {
+            background-color: #1A1A1A;
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px; /* Adicionando espaçamento entre o elemento .data-item */
+        }
+
+        .data-item:hover {
+            transform: translateY(3px);
+        }
+
+        .refresh-button {
+            background-color: #1A1A1A;
+            color: #00ffd9;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .refresh-button:hover {
+            background-color: #00ffd9;
+            color: #1A1A1A;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dados Display</h1>
+        <div class="data-item">
+            <ul>
+                <li>Sensor: {{ book.sensor }}</li>
+                <li>Botão: {{ book.botao }}</li>
+                <li>Ligar Robô: {{ book.ligaRobo }}</li>
+                <li>Resetar Contador: {{ book.resetContador }}</li>
+                <li>Valor de Contagem: {{ book.valorContagem }}</li>
+            </ul>
+        </div>
+        <div style="margin-top: 20px;"> <!-- Adicionando um espaçamento acima do botão -->
+            <button class="refresh-button" onclick="window.location.reload();">Atualizar</button>
+        </div>
+    </div>
+</body>
+</html>

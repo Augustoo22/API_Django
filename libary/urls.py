@@ -16,16 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
 from rest_framework import routers
-
 from books.api import viewsets as booksviewsets
+from books.views import exibir_dados
 
 route = routers.DefaultRouter()
-
-route.register(r'books/', booksviewsets.BooksViewSet, basename="Books")
+route.register(r'dados/', booksviewsets.BooksViewSet, basename="Books")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include(route.urls))
+    ##path('admin/', admin.site.urls),
+    path('', include(route.urls)),
+    path('exibir-dados/', exibir_dados, name='exibir_dados'),
 ]
